@@ -1,2 +1,2 @@
-# trello-stack
+# trelldo
 Trello CLI for workflows
