@@ -5,7 +5,19 @@ import (
 	"github.com/yakshaver-tech/trelldo/cmd"
 )
 
+var (
+	version = "0.0.1"
+	commit  = "HEAD"
+	date    = "now"
+	builtBy = "yakshaver-tech"
+)
+
 func main() {
+	cmd.Version = version
+	cmd.Commit = commit
+  cmd.Date = date
+  cmd.BuiltBy = builtBy
+
 	cmd.Execute()
 	viper.WriteConfig()
 }

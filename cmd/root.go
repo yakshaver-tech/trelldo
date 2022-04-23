@@ -16,6 +16,11 @@ var (
 	client  *trello.Client
 	Top     bool
 
+  Version string
+	Commit  string
+	Date    string
+	BuiltBy string
+
 	rootCmd = &cobra.Command{
 		Use:   "trelldo",
 		Short: "A Trello CLI",
