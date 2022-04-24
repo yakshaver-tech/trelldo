@@ -18,6 +18,6 @@ func main() {
   cmd.Date = date
   cmd.BuiltBy = builtBy
 
-	cmd.Execute()
-	viper.WriteConfig()
+	_ = cmd.Execute()
+	_ = viper.WriteConfig()
 }

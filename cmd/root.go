@@ -39,9 +39,9 @@ func init() {
 	rootCmd.PersistentFlags().StringP("board", "b", "", "board name")
 	rootCmd.PersistentFlags().StringP("list", "l", "", "list name")
 	rootCmd.PersistentFlags().StringP("card", "c", "", "card id")
-	viper.BindPFlag("board", rootCmd.PersistentFlags().Lookup("board"))
-	viper.BindPFlag("list", rootCmd.PersistentFlags().Lookup("list"))
-	viper.BindPFlag("card", rootCmd.PersistentFlags().Lookup("card"))
+  _ = viper.BindPFlag("board", rootCmd.PersistentFlags().Lookup("board"))
+	_ = viper.BindPFlag("list", rootCmd.PersistentFlags().Lookup("list"))
+	_ = viper.BindPFlag("card", rootCmd.PersistentFlags().Lookup("card"))
 }
 
 func er(msg interface{}) {
@@ -71,7 +71,8 @@ func initConfig() {
 		fmt.Printf("Default card: %v\n", viper.GetString("card"))
 	}
 }
-func getClient() (client *trello.Client) {
+
+func getClient() *trello.Client {
 	if client == nil {
 		appKey := viper.GetString("appKey")
 		token := viper.GetString("token")
